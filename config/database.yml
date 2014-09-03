@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: buslines_development
+
+test:
+  adapter: postgresql
+  database: buslines_test
