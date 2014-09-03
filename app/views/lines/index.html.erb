@@ -1,0 +1,7 @@
+<h1>Lines</h1>
+
+<ul>
+  <% @lines.each do |line| %>
+    <li><%= link_to "#{line.id} : #{line.name}", line_path(line.id) %></li>
+  <% end %>
+</ul>

@@ -28,7 +28,7 @@ class StationsController < ApplicationController
 
   def update
     @station = Station.find(params[:id])
-    if @station.update(params[:station])
+    if @station.update(station_params)
       flash[:notice] = 'Station added'
       redirect_to station_path(@station)
     else
@@ -41,7 +41,6 @@ class StationsController < ApplicationController
     @station.destroy
     flash[:notice] = 'Station removed'
     redirect_to root_path
-    # stations_path, want to see if root works
   end
 
   private

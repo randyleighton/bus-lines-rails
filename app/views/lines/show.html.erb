@@ -1,0 +1,8 @@
+<h1><%= @line.name %></h1>
+
+<p><%= link_to "Edit Line", edit_line_path(@line) %></p>
+<p><%= link_to "Delete Line", line_path(@line),
+                              :data => {:confirm => "You sure?",
+                                        :method => "delete"} %></p>
+
+

@@ -1,0 +1,11 @@
+<h1><%= @station.name %></h1>
+
+
+<p><%= link_to "Edit Station", edit_station_path(@station) %></p>
+<p><%= link_to "Delete Station", station_path(@station),
+                                 :data => {:confirm => "You sure?",
+                                           :method => "delete"} %></p>
+
+
+
+
