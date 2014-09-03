@@ -1,11 +1,11 @@
-class StationsController < ApplicationController
+class StopsController < ApplicationController
 
   def index
     @stops = Stop.all
   end
 
   def create
-    @stop = Stop.new(station_params)
+    @stop = Stop.new(stops_params)
     if @stop.save
       flash[:notice] = 'Stop added'
       redirect_to stops_path
@@ -28,7 +28,7 @@ class StationsController < ApplicationController
 
   def update
     @stop = Stop.find(params[:id])
-    if @stop.update(station_params)
+    if @stop.update(stops_params)
       flash[:notice] = 'Stop added'
       redirect_to stop_path(@stop)
     else
@@ -44,7 +44,8 @@ class StationsController < ApplicationController
   end
 
   private
-  def stop_params
-    params.require(:stop).permit(:station_id, :line_id)
+  def stops_params
+    params.require(:stop).permit(:station_id)
+    params.require(:stop).permit(:line_id)
   end
 end
