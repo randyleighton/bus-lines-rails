@@ -45,7 +45,6 @@ class StopsController < ApplicationController
 
   private
   def stops_params
-    params.require(:stop).permit(:station_id)
-    params.require(:stop).permit(:line_id)
+    params.require(:stop).permit(:station_id, :line_id)
   end
 end

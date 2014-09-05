@@ -1,7 +1,10 @@
 <h1>Stops</h1>
 
-<ul>
   <% @stops.each do |stop| %>
-    <%= stop.id %>
+   <h4><%= link_to "#{stop.station.name}", station_path(stop.station.id) %> |
+       <%= link_to "#{stop.line.name}", line_path(stop.line.id) %></h4>
   <% end %>
-</ul>
+
+
+
+
